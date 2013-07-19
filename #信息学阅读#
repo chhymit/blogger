@@ -1,0 +1,91 @@
+* ’¿®’Â©‘ÂÛ‘ÔÄ‘¶Á								:’¿®’Â©‘ÂÛ:
+** 1. ‘ÔÄ‘¶Á http://www.cs.cmu.edu/~dst/Tutorials/Info-Theory/ <
+*** 1. ’¿®’Â©’ÎÌ’À§’»È’ÍÑ bit ’Íè’É½’¼¨’Åª’¡£
+*** 2. ’¿®’Â©’³Ø’Åª’Íı‘ÂÛ’´ğ‘´¡’½¢’À§‘±à‘Âë’¡¤’¼©’ÉÔ’À§’¸¦’µæ’¿®’Â©’³Ø’Åª’Å¯’³Ø’ËÜ‘ÖÊ’¡£
+*** 3. ’ÍÑ’¹¹’¾¯’Åª bit ’É½’¼¨’¹¹’Â¿’Åª’¿®’Â©’¡£
+*** 4. ’Åö’»ö’·ï’Åª’º¹”¼Ü’²½’±Û’Âç‘Ê±’¡¤’²Ä’°Ê’ÍÑ’¹¹’¾¯’Åª bit ’Íè’É½’¼¨’¿®’Â©’¡£
+:NOTE:
+”Ã§’Ã¼’Åª’¾ğ’Ñ×’½¢’À§’¡¤’Ç¡’²Ì”¿»1 million ’¼¡’¹Å‘±Ò’¡¤’°ì’Ä¾’Âş’Í­’°ì’ÌÌ’¡¤’Æá˜¦¾’½¢’²Ä’°Ê’ÍÑ 1 bit ’Íè’É½’¼¨’¡£
+’Ã¢’À§’Ç¡’²Ì million ’¼¡’Ãæ’¡¤’Èó’¾ï’Ê¿’¶Ñ’¡¤’Æá˜¦¾’½¢’Í×’ÍÑ1 million bit ’Íè’É½’¼¨’¡£
+’Ã¢’À§’¡¤’Ç¡’²Ì1000 ’¼¡’Ãæ’¡¤head ’ÏÂ tail ’Åª’¿ô’ÌÜ’ÉÔ’°ì’Ã×’¡¤’Îã’Ç¡ head ’Åª’³µ’Î¨’À§ 0.001’¡¤tail ’Åª’³µ’Î¨’À§ 0.999.
+’Æá˜¦¾’½¢’²Ä’°Ê’ÍÑ head ’Íè’É½’¼¨’¡£ 1 million ’¼¡’Ãæ ’¡¤head ’Åª’¼¡’¿ô’Ê¿’¶Ñ’À§ 1000 ’¼¡’¡¤’²æ‘ÃÇ’²Ä’°Ê‘±ê‘¼Ç‘Õâ’º³ head position’¡¤˜¬å’°ì’Ğ¤
+’»È’ÍÑ’Åª bit ’À§ log(1000000) = 20,’Á´’Éô’Åªbit ’À§ 1000 * 20 = 20000, ’Í×‘Ô¶’¾®’Ğ² 1 miliion ’¡£
+
+’Åö’Á³’¡¤’²æ‘ÃÇ’Ìé’²Ä’°Ê’»È’ÍÑ position ’Ç·‘¼ä’Åª’µ÷”Ğó’Íè’É½’¼¨’¡¤’Ê¿’¶Ñ’Íè‘Ëµ’¡¤’µ÷”Ğó’À§ 1000’¡¤’Æá˜¦¾’½¢’À§ 10 bit. ’°ì’¶¦1000 ’Ğ¤’ÅÀ’¡¤bit ‘×Ü’¿ô
+’½¢’À§10000’¡¤’Í×‘Ô¶’¾®’Ğ² 20000.
+:END:
+
+*** 5. ‘±à‘Âë’Åª”Ã§’¸Â(optimal encoding)
+The information content of a sequence is defined as the number of bits required to transmit that sequence using
+an optimal encoding. We are always free to use a less efficient coding, which will require more bits, but that
+does not increase the amount of information transmitted.
+’½ø’Îó’Åª’¿®’Â©’ÎÌ’¡¤’½¢’À§’¼û’Í×’ÍÑ’Íè‘´«‘Êä‘Õâ’Ğ¤’½ø’Îó’Åª’ºÇ™¡ë‘±à‘Âë’°Ì’¿ô’¡£’Í­‘Ê±’¸õ’¡¤’²æ‘ÃÇ’²Ä’Ç½’ÚÛ’Ë¡’»È’ÍÑ’ºÇ™¡ë’Åª‘±à‘Âë’¡¤’Ã¢’À§‘Õâ’Ğ¤’ÉÔ’±Æ”µ»‘´«‘Êä’Åª’¿®’Â©’ÎÌ’¡¤’°ø‘Îª’¿®’Â©’ÎÌ’Åª’¹Õ’ÎÌ’À§’´ğ’Ğ²’ºÇ™¡ë‘±à‘Âë’¡£
+*** 6. ’Äê‘³¤‘±à‘Âë’ÏÂ‘±ä‘³¤‘±à‘Âë
+‘Êµ‘¼Ê’¾å’½¢’À§’ºß’»»’Ë¡’Ãæ’³Ø‘Ï°’Åª’ğ¹’É×’ÒØ‘±à‘Âë’¡¤’½Ğ‘ÏÖ’³µ’Î¨’¾®’Åª’»ö’·ï’ÍÑ‘³¤‘±à‘Âë’¡¤’½Ğ‘ÏÖ’³µ’Î¨’Âç’Åª’ÍÑ‘³¤‘±à‘Âë’¡£‘Êµ‘¼Ê’¾å’½¢’À§’µá’ºÇ’¾®˜¶­’¡§
+sum(‘±à‘Âë‘³¤’ÅÙ*’½Ğ‘ÏÖ’Åª’³µ’Î¨)’¡£
+
+’Îã’»Ò’¡§
+’»ö’·ï’½Ğ‘ÏÖ’Åª’³µ’Î¨’¡§
+A are 1/2, the chances of throwing a B are 1/4, C is 1/8, D is 1/16, E is 1/32, F is 1/64, and G and H are
+each 1/128.
+
+˜¬å’Ğ¤’»ö’·ï‘±à‘Âë‘³¤’ÅÙ’¡§A, we will transmit a single 0. If we throw a B we will transmit a 1 followed by a 0, which we'll write 10. If we throw a C the code will be 11 followed by 0, or 110. Similarly we'll use 1110 for D, 11110 for E, 111110 for F, 1111110 for G, and 1111111 for H.
+
+‘×Ü’ÂÎ’»ö’·ï’Åª‘±à‘Âë‘³¤’ÅÙ’¡§
+1/2 + 2/4 + 3/8 + 4/16 + 5/32 + 6/64 + 7/128 + 7/128 = 1.984
+’Éá’ÄÌ’Åª‘±à‘Âë’Êı’¼°: 8’Ğ¤’»ö’·ï’¡¤3 bit’¡£ 3 > 1.984
+*** 7. ’Ç¡’²¿‘¼Æ’»»’¿®’Â©’ÎÌ
+’Ç·’Á°’Åª’Îã’»Ò’¡¤’²æ‘ÃÇ‘»¹‘Éè‘¼Æ’Î»‘±à‘Âë’Êı’¼°’¡¤’Á³’¹¡’µá’²ò’ºÇ™¡ë’¡¤’Ìé’½¢’À§‘Ëµ’¡¤’²æ‘ÃÇ’¼û’Í×’ÃÎ’Æ»’ºÇ™¡ë‘±à‘Âë’¡¤’Á³’¹¡’º¬’¿ø’³µ’Î¨‘¼Æ’»»’ºÇ™¡ë’Åªbit’¡£
+’Æá˜¦¾’¡¤’Í­’Ë×’Í­’²Ä’°Ê’ÉÔ’µá’²ò’ºÇ™¡ë‘±à‘Âë’¡¤’½¢’ÃÎ’Æ»’ºÇ™¡ë’Åªbit’¡£‘Õâ’Ğ¤’½¢’À§’¿®’Â©’ÎÌ’Åª‘¼Æ’»»’¡£
+
+‘¶Ô’Ğ²’Ê¿’¶Ñ’»ö’·ï’¡¤’»ö’·ï’Åª‘×Ü’¿ô’ÑÓ’Äê’Î» bit ’¿ô’ÌÜ’¡¤’½¢’À§ log(num)’¡£‘Õâ’Ğ¤’À§’Íı‘ÂÛ’¾å’Åª’ºÇ™¡ë’²ò’¡¤’Îã’Ç¡’¡§log(6) = 2.58.’Ã¢’À§‘Êµ‘¼Ê’¾å’¡¤’²æ‘ÃÇ’¼û’Í×3bit’¡¤’Ê¿’¶Ñ’Íè‘Ëµ’²Ä’°Ê’»È’ÍÑ 2.58 bit’¡£ ’Íı‘ÂÛ’¾å’¡¤’²æ‘ÃÇ’²Ä’°Ê’Í­’¹¹’Â¿’Åª’Êı’Ë¡’Íè”³¢’¾¯bit’¡¤’Îã’Ç¡’ÇÄ 3’Ğ¤’»ö’·ï’Åö’À®’°ì’Ğ¤‘Á¬‘Ğø’Åª’»ö’·ï’¡¤’Æá˜¦¾’Âş’Í×8bit’½¢’²Ä’°Ê’Î»’¡¤‘µ¥’ÆÈ’´Ç’ÂÔ’¼û’Í× 9 bit’¡§
+Instead of treating throws individually, consider them three at a time. The number of
+possible three-throw sequences is 6^3= 216. Using 8 bits we can encode a number between 0 and 255, so a
+three-throw sequence can be encoded in 8 bits with a little to spare; this is better than the 9 bits we'd need
+if we encoded each of the three throws seperately.
+
+‘Õâ’Î¤’»È’ÍÑ’Î»’°ì’Ğ¤’µ»’¹ª’¡¤’½¢’À§’Ç·’Á°’¡¤‘¼Æ’»» bit ’¿ô’ÌÜ’¡¤’²æ‘ÃÇ’»È’ÍÑ’Î» log’¡¤’»²’¿ô’À§ num’¡¤‘¶Ô’Ğ²’Ê¿’¶Ñ’»ö’·ï’¡¤˜¬å’Ğ¤’»ö’·ï’Åª’³µ’Î¨’À§ 1/num.
+’Æá˜¦¾’¼û’Í×’Åªbit ’¿ô’ÌÜ‘Êµ‘¼Ê’¾å’À§ log(num) = log(1/P) = log(1) - log(p) = - log(p).
+
+‘Õâ’Ğ¤’Êı’Ë¡’Æ±‘Ñù”áË’ÍÑ’Ğ²’Èó’Ê¿’¶Ñ’»ö’·ï’¡¤’°ø‘Îª ’»ö’·ï’Åª P ’±Û’Âç’¡¤’Æá˜¦¾‘Õâ’Ğ¤’»ö’·ï’Åª‘±à‘Âë‘³¤’ÅÙ’É¬’Á³’±Û’¾®’¡£‘¶Ô’Ğ² ’³µ’Î¨‘Îª P ’Åª’»ö’·ï’¡¤’Õà’Åª’ºÇ‘³¤
+‘±à‘Âë’À§ - log(P). ‘Õâ’Ğ¤’ÄÌ‘¹ı‘¹Û’»¡’Ç·’Á°’Åª’Îã’»Ò’²Ä’°Ê‘·¢‘ÏÖ’¡¤’³µ’Î¨ 1/128 ’Åª’»ö’·ï’¡¤‘±à‘Âë‘³¤’ÅÙ’À§7.
+
+The expected number of bits required to encode one value is the weighted average of the
+number of bits required to encode each possible value,where the weight is the probability of that value:
+Underscript[œôø±,x] P (x) * -log P (x)
+
+’ºß‘¼Æ’»»’°ì‘×é’»ö’·ï’Åª‘Ê±’¸õ’¡¤’ºß’Ë×’Í­’Ç¤’²¿’¿®’Â©’Åª’¾ğ’Ñ×’²¼’¡¤’²æ‘ÃÇ’Âş’Ç½’Ğñ‘Éè’»ö’·ï’Ç·‘¼ä’ÆÈ’Î©’¡¤’³î˜¬å’Ğ¤’»ö’·ï’ÅÔ’À§’Ê¿’¶Ñ’Ê¬’ÉÛ’¡£’°ø‘Îª’²æ‘ÃÇ
+‘·¢‘ÏÖ’¡¤’»ö’·ï’Ç·‘¼ä’Â¸’ºß‘Áª’·Ï’¡¤’½¢’²ñ”³¢’¾¯ bit ’¿ô’ÌÜ’¡£
+’°ø’º¡’¡¤‘¶Ô’°ì‘×é’»ö’·ï’ÉÁ’½Ò’¼û’Í×’Åª bit ‘×Ü’¿ô(’»È’ÍÑ’³µ’Î¨’¡¤‘Êµ‘¼Ê’¾å’Ìé’À§’°ì™¬İ‘¹é’°ì’²½)’¡£’Ç¤’²¿’°ì’Ğ¤’Ê¿’¶Ñ’»ö’·ï’¡¤’»È’ÍÑ’Åª’ºÇ™¡ë‘±à‘Âë’¡¤’ÉÔ’²Ä’Ç½
+’Ä¶’½Ğ - log(p). 1/128’Åª’³µ’Î¨’¡¤‘Êµ‘¼Ê’¾å’½¢’À§‘Õâ’Ğ¤’»ö’·ï’¼û’Í×’ÏÂ’Â¶’Í¾’Åª 127 ™¬İ’¾ğ’Ñ×’¶è’Ê¬’¡¤’ºÍ’Ç½’Í­’ÚÃ’É½’¼¨’¡¤’°ø’º¡’ºÇ™¡ë’Åª‘±à‘Âë‘³¤’ÅÙ’À§7.
+
+‘Êµ‘¼Ê’¾å’¡¤‘Õâ’Ğ¤’½¢’À§’ÃÎ’Æ»’»ö’·ï‘·¢’À¸’³µ’Î¨’Åª’¾ğ’Ñ×’²¼’Åª’´ğ‘´¡’¿®’Â©’ÎÌ’Åª‘¼Æ’»»’Êı’Ë¡’¡£P(A)
+
+With a coin there are only two possible values. What information theory says we can do is consider each value
+separately.  If a particular value occurs with probability P, we assume that it is drawn from a uniformly
+distributed set of values when calculating its information content. The size of this set would be 1/P elements.
+Thus, the number of bits required to encode one value from this hypothetical set is -log P. Since the actual
+distribution we're trying to encode is not uniform, we take the weighted average of the estimated information
+content of each value (heads or tails, in the case of a coin), weighted by the probability P of that value
+occuring. Information theory tells us that an optimal encoding can do no better than this. Thus, with the
+heavily biased coin we have the following:
+
+    P(heads) = 1/1000,  so heads takes -log(1/1000) = 9.96578 bits to encode
+
+    P(tails) = 999/1000,  so tails takes -log(999/1000) = 0.00144 bits to encode
+
+    Avg.bits required  =  Underscript[œôø±, x] -P(x) log P(x)
+        = (1/1000) × 9.96578 + (999/1000) × 0.00144  =  0.01141 bits per coin toss 
+
+’Ìé’½¢’À§‘Ëµ’¡¤’ºß TIPS ’Ãæ’¡¤’ÉÁ’½Ò pattern ’½Ğ‘ÏÖ’ºß’Ë¿’Ğ¤ bin ’Ãæ’¼û’Í×’Åª bit ’¿ô’ÌÜ’¡£’Íı‘ÂÛ’¾å’¡¤5 bin ’¼û’Í×’Åª’À§ 2.32,’Ìé’½¢’À§3 bit’¡£
+’Ã¢’À§’¡¤’Ê¬’ÉÛ’¹¹’²Ã’Í­’ÆÃ’À¬’Åªpattern’¡¤’¼û’Í×’Åª bit ’¿ô’ÌÜ’¹¹’¾®’¡£
+
+‘Õâ’Ğ¤’½¢’À§ information content’¡£
+
+DTIPS ‘¼Æ’»»’Åª’½¢’À§’¡¤’Åö’ÃÎ’Æ»’Î» action ’ºß’Ë¿’Ğ¤bin ‘·¢’À¸’¡¤’³î’ÃÎ’Æ»’À§’Èİ’Â°’Ğ²’Ë¿’Ğ¤ pattern’¡¤’Æá˜¦¾‘Õâ’Ğ¤action ’Â°’Ğ²’Ë¿’Ğ¤‘×é’Åª’»ö’·ï
+’Åª’ÉÁ’½Òbit ’À§’Â¿’¾¯’¡£’¼û’Í×’Åªbit ’±Û’¾¯’¡¤‘Ëµ’ÌÀ’»ö’·ï’¹¹‘Îª’À¶’Úò’¡£
+<h2>
+** 2. ‘ÔÄ‘¶Á http://moultano.wordpress.com/article/a-short-simple-introduction-to-3kbzhsxyg4467-7/ 
+*** 1. rare == information.’µ©’¾¯’Â¨‘Îª’¿®’Â©’¡¤‘Õâ’Ğ¤’À§’°ì’Ğ¤’×Ì’ÄÌ’Â¯’°×”¾ò’Åª’²ò‘ÊÍ’¡£
+The rarer something is, the more youœôòùve learned if you discover that it happened.
+*** 2. 
